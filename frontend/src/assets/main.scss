@@ -1,0 +1,52 @@
+body {
+  background-color: #2e3080;
+  color: white;
+}
+svg {
+  margin-top: -5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.searchbox {
+  max-width: 40vw;
+  margin: 0 auto;
+  min-width: 300px;
+}
+.indicator {
+  text-align: center;
+  width: 100%;
+  margin-top: 42vh;
+  margin-bottom: 42vh;
+  img {
+  }
+}
+.card-columns {
+}
+.header {
+  max-height: 250px;
+  text-align: center;
+  background-color: white;
+  padding: 15px;
+  color: black !important;
+  border-bottom: 5px solid #666666;
+  outline: medium;
+}
+.card:hover {
+  opacity: 1;
+}
+.card {
+  opacity: 0.8;
+  cursor: pointer;
+  background-color: #2e3035;
+  .card-img-top {
+    cursor: pointer;
+  }
+  span {
+    margin: 15px;
+  }
+  .description {
+    background-color: #2e3035;
+    font-weight: bold;
+    margin: 15px;
+  }
+}

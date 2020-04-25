@@ -1,2 +1,9 @@
-
 export const LOAD_GALLERY = "LOAD_GALLERY";
+export const ADD_POST = "ADD_POST";
+export const SET_CURRENT_POST = "SET_CURRENT_POST";
+export const SET_FILTER_SECTION = "SET_FILTER_SECTION";
+export const SET_FILTER_WINDOW = "SET_FILTER_WINDOW";
+
+export const SET_GALLERY_ID = "SET_GALLERY_ID";
+export const SET_FILTER_VIRAL = "SET_FILTER_VIRAL";
+export const SET_FILTER_SORT = "SET_FILTER_SORT";

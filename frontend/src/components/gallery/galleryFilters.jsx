@@ -95,7 +95,7 @@ const ConnectedGalleryFilters = ({ state }) => {
           </button>
         </div>
         <div className="col-md-2  col-xs-6"></div>
-        <div className="dropdown mt-4 col-xs-6 col-md-2">
+        <div className="dropdown mt-4 col-xs-6 col-md-2" title="Section">
           <button
             className="btn  w-100 btn-secondary dropdown-toggle"
             type="button"
@@ -110,7 +110,7 @@ const ConnectedGalleryFilters = ({ state }) => {
             {sectionItems}
           </div>
         </div>
-        <div className="dropdown  mt-4 col-xs-6 col-md-2">
+        <div className="dropdown  mt-4 col-xs-6 col-md-2" title="Sort">
           <button
             className="btn  w-100 btn-secondary dropdown-toggle"
             type="button"
@@ -126,7 +126,7 @@ const ConnectedGalleryFilters = ({ state }) => {
             {rising}
           </div>
         </div>
-        <div className="dropdown  mt-4 col-xs-6 col-md-2">
+        <div className="dropdown  mt-4 col-xs-6 col-md-2" title="Window">
           <button
             className="btn  w-100 left-align btn-secondary dropdown-toggle"
             type="button"

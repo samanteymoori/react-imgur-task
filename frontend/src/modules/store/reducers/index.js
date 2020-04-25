@@ -60,26 +60,31 @@ function rootReducer(state = initialState, action) {
   } else if (action.type === SET_FILTER_SECTION) {
     return Object.assign({}, state, {
       section: action.payload,
+      currentGallery: null,
       loadGallery: true,
     });
   } else if (action.type === SET_FILTER_WINDOW) {
     return Object.assign({}, state, {
       window: action.payload,
+      currentGallery: null,
       loadGallery: true,
     });
   } else if (action.type === SET_GALLERY_ID) {
     return Object.assign({}, state, {
       galleryId: action.payload,
+      currentGallery: null,
       loadGallery: true,
     });
   } else if (action.type === SET_FILTER_SORT) {
     return Object.assign({}, state, {
       sort: action.payload,
+      currentGallery: null,
       loadGallery: true,
     });
   } else if (action.type === SET_FILTER_VIRAL) {
     return Object.assign({}, state, {
       showViral: action.payload,
+      currentGallery: null,
       loadGallery: true,
     });
   } else if (action.type === SET_IMAGE_INDEX) {

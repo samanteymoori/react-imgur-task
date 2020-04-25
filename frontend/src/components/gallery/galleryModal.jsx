@@ -31,7 +31,7 @@ const ConnectedGalleryModal = ({ currentPost, imageIndex }) => {
       <div
         className="modal-dialog"
         style={{
-          maxWidth: "110vh",
+          maxWidth: "80vw",
         }}
         role="document"
       >
@@ -78,7 +78,7 @@ const ConnectedGalleryModal = ({ currentPost, imageIndex }) => {
                 </div>
                 <div className="col-md-10">
                   <img
-                    style={{ height: "60vh", maxWidth: "100vh" }}
+                    style={{ height: "70vh", maxWidth: "100vw" }}
                     src={currentPost.images[imageIndex].link}
                     alt={currentPost.title}
                   />

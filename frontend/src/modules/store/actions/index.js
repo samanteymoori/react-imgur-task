@@ -7,6 +7,7 @@ import {
   SET_FILTER_WINDOW,
   ADD_POST,
   SET_GALLERY_ID,
+  SET_IMAGE_INDEX,
 } from "../constants/action-types";
 
 export function addPost(payload) {
@@ -34,4 +35,7 @@ export function setSection(payload) {
 }
 export function setGalleryId(payload) {
   return { type: SET_GALLERY_ID, payload };
+}
+export function setImageIndex(payload) {
+  return { type: SET_IMAGE_INDEX, payload };
 }

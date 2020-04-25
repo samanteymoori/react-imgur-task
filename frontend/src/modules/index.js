@@ -8,6 +8,7 @@ import {
   setWindow,
   addPost,
   setGalleryId,
+  setImageIndex,
 } from "./store/actions/index";
 
 window.store = store;
@@ -19,3 +20,4 @@ window.setViral = setViral;
 window.setWindow = setWindow;
 window.addPost = addPost;
 window.setGalleryId = setGalleryId;
+window.setImageIndex = setImageIndex;

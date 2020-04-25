@@ -7,6 +7,7 @@ import {
   SET_FILTER_WINDOW,
   SET_GALLERY_ID,
   ADD_POST,
+  SET_IMAGE_INDEX,
 } from "../constants/action-types";
 
 const initialState = {
@@ -33,6 +34,7 @@ const initialState = {
   },
   loadGallery: true,
   galleryId: 0,
+  imageIndex: 0,
   section: "hot",
   sort: "viral",
   window: "day",
@@ -53,6 +55,7 @@ function rootReducer(state = initialState, action) {
   } else if (action.type === SET_CURRENT_POST) {
     return Object.assign({}, state, {
       currentPost: action.payload,
+      imageIndex: 0,
     });
   } else if (action.type === SET_FILTER_SECTION) {
     return Object.assign({}, state, {
@@ -78,6 +81,10 @@ function rootReducer(state = initialState, action) {
     return Object.assign({}, state, {
       showViral: action.payload,
       loadGallery: true,
+    });
+  } else if (action.type === SET_IMAGE_INDEX) {
+    return Object.assign({}, state, {
+      imageIndex: action.payload,
     });
   }
   return state;

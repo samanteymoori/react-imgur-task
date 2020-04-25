@@ -1,22 +1,31 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { ArrowUp, ArrowDown, Eye, TrendingUp } from "react-feather";
+import {
+  ArrowUp,
+  ArrowDown,
+  Eye,
+  TrendingUp,
+  ArrowRightCircle,
+  ArrowLeftCircle,
+} from "react-feather";
 import store from "./../../modules/store/index";
-import { setCurrentPost } from "../../modules/store/actions/index";
+import {
+  setCurrentPost,
+  setImageIndex,
+} from "../../modules/store/actions/index";
 const mapStateToProps = (state) => {
-  return { currentPost: state.currentPost };
+  return { currentPost: state.currentPost, imageIndex: state.imageIndex };
 };
 
-const ConnectedGalleryModal = ({ currentPost }) => {
+const ConnectedGalleryModal = ({ currentPost, imageIndex }) => {
   if (!currentPost) return null;
   return (
     <div
-      className="modal"
+      className="modal d-none d-sm-block"
       style={{
         display: currentPost ? "inline" : "none",
       }}
-      tabindex="-1"
       role="dialog"
     >
       <div
@@ -26,11 +35,7 @@ const ConnectedGalleryModal = ({ currentPost }) => {
         }}
         role="document"
       >
-        <div
-          className="modal-content"
-          onClick={() => store.dispatch(setCurrentPost(null))}
-          style={{ backgroundColor: "#2e3035" }}
-        >
+        <div className="modal-content" style={{ backgroundColor: "#2e3035" }}>
           <div className="modal-body">
             <button
               type="button"
@@ -51,11 +56,53 @@ const ConnectedGalleryModal = ({ currentPost }) => {
               style={{ backgroundColor: "#2e3035" }}
             >
               <h2 className="text-left m-4">{currentPost.title}</h2>
-              <img
-                style={{ height: "60vh", maxWidth: "100vh" }}
-                src={currentPost.images[0].link}
-                alt={currentPost.title}
-              />
+
+              <div className="row">
+                <div className="col-md-1" style={{ marginTop: "30vh" }}>
+                  <ArrowLeftCircle
+                    color="white"
+                    style={{
+                      cursor: "pointer",
+                      display: currentPost.images[imageIndex - 1]
+                        ? "inline"
+                        : "none",
+                    }}
+                    onClick={(e) =>
+                      currentPost.images[imageIndex - 1]
+                        ? store.dispatch(setImageIndex(imageIndex - 1))
+                        : store.dispatch(setImageIndex(imageIndex))
+                    }
+                    size={40}
+                    className="mr-4"
+                  ></ArrowLeftCircle>
+                </div>
+                <div className="col-md-10">
+                  <img
+                    style={{ height: "60vh", maxWidth: "100vh" }}
+                    src={currentPost.images[imageIndex].link}
+                    alt={currentPost.title}
+                  />
+                </div>
+                <div className="col-md-1" style={{ marginTop: "30vh" }}>
+                  <ArrowRightCircle
+                    color="white"
+                    style={{
+                      cursor: "pointer",
+                      display: currentPost.images[imageIndex + 1]
+                        ? "inline"
+                        : "none",
+                    }}
+                    onClick={(e) =>
+                      currentPost.images[imageIndex + 1]
+                        ? store.dispatch(setImageIndex(imageIndex + 1))
+                        : store.dispatch(setImageIndex(imageIndex))
+                    }
+                    size={40}
+                    className="mr-4"
+                  ></ArrowRightCircle>
+                </div>
+              </div>
+
               <div className="description m-4 text-left">
                 {currentPost.ups}
                 <span title="Up Votes">
